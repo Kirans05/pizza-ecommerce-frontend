@@ -40,6 +40,7 @@ import {
     };
   
     const submitHandler = async () => {
+      const tocken = localStorage.getItem("tocken")
       let newList = {
         name: list.name,
         prices:{
@@ -104,6 +105,7 @@ import {
   
 
     const fetchParticulaProduct = async () => {
+      const tocken = localStorage.getItem("tocken")
         let options = {
             url:`https://pizza-ecommerce-website.herokuapp.com/pizzaProduct/singleProduct/${id}`,
             headers:{
