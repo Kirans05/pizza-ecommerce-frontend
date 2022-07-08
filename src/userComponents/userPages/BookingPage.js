@@ -169,12 +169,17 @@ const BookingPage = () => {
     display={"flex"}
     flexDir={"row"}
     justifyContent={"flex-start"}
-    border={"2px solid red"}
+    // border={"2px solid red"}
     p={5}
     >
-    <Image boxSize="300px" src={selectedPizza.image} alt="Dan Abramov" mr={10} border={"2px solid black"}/>
+    <Image boxSize="300px" src={selectedPizza.image} alt="Dan Abramov" mr={10} border={"2px solid black"}
+    maxW={{base:"200px",md:"400px"}} 
+    maxH={{base:"200px",md:"300px"}} 
+    minW={{base:"20px",md:"400px"}} 
+    minH={{base:"200px",md:"300px"}}
+    />
     <Box
-    fontSize={20}
+    fontSize={{base:15,md:20}}
     display={"flex"}
     flexDir={"column"}
     rowGap={3}
@@ -198,7 +203,9 @@ const BookingPage = () => {
         Enter Street : <Input placeholder='Street' size='md' maxLength={50} width={"100%"} onChange={addresshandler} name="street"/>
         Enter LandMark : <Input placeholder='LandMark' size='md' maxLength={50} width={"100%"} onChange={addresshandler} name="landmark"/>
         Enter City : <Input placeholder='City' size='md' maxLength={50} width={"100%"}onChange={addresshandler} name="city"/>
-        <Button variant={"solid"} colorScheme={"blue"} onClick={BookPizzaFunction}>Book</Button>
+        <Button variant={"solid"} colorScheme={"blue"} onClick={BookPizzaFunction}
+        size={{base:"sm",md:"md"}}
+        >Book</Button>
     </Box>
     </Box>
     }

@@ -9,15 +9,16 @@ const Footer = () => {
     bg={"black"}
     color={"white"}
     // height={100}
+    // marginTop={{base:"-20px"}}
     >
         <Box
         display={"flex"}
-        flexDir={"row"}
+        flexDir={{base:"column",md:"row"}}
         alignItems="center"
         justifyContent={"space-evenly"}
         >
             <Text 
-            fontSize={35}
+            fontSize={{base:20,md:40}}
             >
                 Dom's Pizza
             </Text>
@@ -39,7 +40,7 @@ const Footer = () => {
         </Box>
         <Box>
             <Text
-            fontSize={25}
+            fontSize={{base:20,md:25}}
             m={"20px 0px 0px 0px"}
             textAlign={"center"}
             >

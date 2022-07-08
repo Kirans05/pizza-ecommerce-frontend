@@ -77,12 +77,13 @@ const Header = () => {
   justifyContent={"flex-end"}
 >
   |
-  <Text mr={12} mt={0} mb={0} onClick={onOpen} ml={5} 
+  <Text  mt={0} mb={0} onClick={onOpen} ml={5} 
   _hover={{
     cursor:"pointer"
   }}
   color="white"
-  fontSize={30}
+  fontSize={{base:17,md:30}}
+  marginRight={{base:0,md:10}}
   >
     SignUp / Login / AdminLogin
   </Text>

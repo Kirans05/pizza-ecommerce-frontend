@@ -59,14 +59,14 @@ import {
           justifyContent="center"
           >
             {
-              children ?  <Button colorScheme='blue' size='md'  mr={3} onClick={()=>nav("/adminDashboard")}>
+              children ?  <Button colorScheme='blue' size={{base:"sm",md:"md"}}  mr={3} onClick={()=>nav("/adminDashboard")}>
               Home
             </Button>
             : null
             }
-            <Button colorScheme="blue" mr={4} ml={4}>
+            {/* <Button colorScheme="blue" mr={4} ml={4}>
               Admin SignUp
-            </Button>
+            </Button> */}
             <Menu>
               <MenuButton rightIcon={<ChevronDownIcon />}>
                 <Avatar

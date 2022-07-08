@@ -5,25 +5,35 @@ import { useNavigate } from "react-router-dom";
 import { InputLabel, MenuItem, Select, FormControl } from "@mui/material";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import { MainContext } from "../../context/context";
-import {} from "@chakra-ui/icons"
+import {} from "@chakra-ui/icons";
 import UPizzaCart from "./UPizzaCart";
 import Skeletonjs from "./Skeleton";
-
 
 const UMainBody = () => {
   const nav = useNavigate();
 
   const toast = useToast();
   // const [data, setdata] = useState([]);
-  
-  const { tocken, varient, setvarient, rerender,setRerender,data, setdata ,setuser,user,settocken} = useContext(MainContext);
+
+  const {
+    tocken,
+    varient,
+    setvarient,
+    rerender,
+    setRerender,
+    data,
+    setdata,
+    setuser,
+    user,
+    settocken,
+  } = useContext(MainContext);
 
   const handleChange = (e) => {
     setvarient(e.target.value);
   };
 
   const fetchAllProducts = async () => {
-    const tocken = localStorage.getItem("tocken")
+    const tocken = localStorage.getItem("tocken");
     let options = {
       url: "https://pizza-ecommerce-website.herokuapp.com/pizzaProduct/fetchAllPizza",
       headers: {
@@ -35,10 +45,10 @@ const UMainBody = () => {
 
     try {
       let response = await axios(options);
-      console.log(response.data.message)
-      if(response.data.message == "tocken Not Authorized"){
-        setdata([])
-      }else{
+      console.log(response.data.message);
+      if (response.data.message == "tocken Not Authorized") {
+        setdata([]);
+      } else {
         setdata(response.data.result);
       }
     } catch (error) {
@@ -51,28 +61,30 @@ const UMainBody = () => {
       });
     }
   };
-  
+
   useEffect(() => {
-    let userlist = JSON.parse(localStorage.getItem("user"))
-        setuser({...user,...userlist})
-        settocken(localStorage.getItem("tocken"))
+    let userlist = JSON.parse(localStorage.getItem("user"));
+    setuser({ ...user, ...userlist });
+    settocken(localStorage.getItem("tocken"));
     fetchAllProducts();
     // console.log("UserMAinBody")
   }, [rerender]);
 
-
   const selectInputValue = (e) => {
-    setvarient(e.target.value)
-  }
-
+    setvarient(e.target.value);
+  };
 
   return (
     <Box bg="white">
-      <Box mt={4} mb={5}>
+      <Box mt={4} mb={5}
+      display={"flex"}
+      flexDirection={"row"}
+      justifyContent={{base:"space-around",md:"flex-start"}}
+      >
         <Button
           colorScheme="blue"
           size="md"
-        //   onClick={() => nav("/adminDashboard")}
+          //   onClick={() => nav("/adminDashboard")}
           mr={5}
         >
           Home
@@ -107,9 +119,7 @@ const UMainBody = () => {
             rowGap={10}
           >
             {data.map((item, index) => {
-              return (
-                  <UPizzaCart key={index} item={item}/>
-              );
+              return <UPizzaCart key={index} item={item} />;
             })}
           </Box>
         ) : (

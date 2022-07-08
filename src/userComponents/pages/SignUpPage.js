@@ -47,7 +47,8 @@ const SignUpPage = () => {
        options = {
         url:"https://pizza-ecommerce-website.herokuapp.com/user",
         headers:{
-          "content-type":"application/json"
+          // "Access-Control-Allow-Origin":"*"
+          // "content-type":"application/json"
         },
         data:{
           name:list.name,

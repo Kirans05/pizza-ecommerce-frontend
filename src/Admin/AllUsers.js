@@ -101,13 +101,18 @@ import Skeletonjs from "../userComponents/userPages/Skeleton";
                         p={5}
                         boxShadow={"xl"}
                         >
-                                <Image boxSize='200px' src={item.pic} alt='User Image' mr={10}/>
+                                <Image boxSize='200px' src={item.pic} alt='User Image' mr={10}
+                                maxW={{base:"100px",md:"400px"}} 
+                                maxH={{base:"200px",md:"300px"}} 
+                                minW={{base:"100px",md:"400px"}} 
+                                minH={{base:"20*0px",md:"300px"}} 
+                                />
                                 <Box
                                 display={"flex"}
                                 flexDir={"column"}
                                 alignItems={"flex-start"}
                                 rowGap={5}
-                                fontSize={25}
+                                fontSize={{base:18,md:25}}
                                 >
                                     <Text>Name : {item.name}</Text>
                                     <Text>Email : {item.email}</Text>

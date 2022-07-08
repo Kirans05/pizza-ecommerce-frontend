@@ -49,7 +49,7 @@ import { MainContext } from "../../context/context";
           justifyContent={"space-between"}
         >
           <Text
-        fontSize={40}
+        fontSize={{base:30,md:40}}
         fontStyle={"italic"}
 
           >
@@ -62,7 +62,7 @@ import { MainContext } from "../../context/context";
           justifyContent="center"
           >
             {
-              children ?  <Button colorScheme='blue' size='md'  mr={3} onClick={()=>nav("/dashboard")}>
+              children ?  <Button colorScheme='blue' size={{base:"sm",md:"md"}}  mr={3} onClick={()=>nav("/dashboard")}>
               Home
             </Button>
             : null

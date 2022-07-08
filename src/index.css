@@ -11,17 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.mainContainer {
-  /* background-attachment: ; */
-  background-image: url("../src/images/bg1.jpg");
+
+
+
+
+
+
+/* background-attachment: ; */
+.mainContainer { 
+   /* background-image: url("../src/images/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
-  /* background-attachment: url(./images/bg1.jpg); */
-}
+  height: 90vh;  */
+ }
+
+/* background-attachment: url(./images/bg1.jpg); */
+
+
+
+
+
+
+
+
 /* .subConatiner{
   height: 100vh;
   background-image: url("../src/images/bg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+} */
+/* @media only screen and (max-width:1000px){
+  .mainContainer{
+    background-image: url("../src/images/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 } */

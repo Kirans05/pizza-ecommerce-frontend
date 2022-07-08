@@ -165,7 +165,7 @@ import {
           flexDir={"column"}
           alignItems="center"
           justifyContent={"space-between"}
-          width="600px"
+          width={{base:"400px",md:"600px"}}
           p={5}
           margin="70px auto 0px auto"
           boxShadow={"0px 1px 11px 1px grey"}
@@ -246,7 +246,7 @@ import {
           <br />
           <Button
             colorScheme="blue"
-            size="md"
+            size={{base:"sm",md:"md"}}
             onClick={submitHandler}
             isLoading={loading}
           >

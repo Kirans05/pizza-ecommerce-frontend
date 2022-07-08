@@ -117,7 +117,7 @@ const AddPizza = () => {
         flexDir={"column"}
         alignItems="center"
         justifyContent={"space-between"}
-        width="600px"
+        width={{base:"450px",md:"600px"}}
         p={5}
         margin="70px auto 0px auto"
         boxShadow={"0px 1px 11px 1px grey"}
@@ -196,7 +196,7 @@ const AddPizza = () => {
         />
         <Button
           colorScheme="blue"
-          size="md"
+          size={{base:"sm",md:"md"}}
           onClick={submitHandler}
           isLoading={loading}
           mt={5}

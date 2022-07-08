@@ -114,7 +114,11 @@ const ADBody = () => {
 
   return (
     <Box bg="white">
-      <Box mt={4} mb={5}>
+      <Box mt={4} mb={5}
+       display={"flex"}
+       flexDirection={"row"}
+       justifyContent={{base:"space-around",md:"flex-start"}}
+      >
         <Button
           colorScheme="blue"
           size="md"

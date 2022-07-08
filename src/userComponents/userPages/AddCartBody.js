@@ -68,7 +68,12 @@ const AddCartBody = ({ item, setfetchagain, fetchAgain }) => {
       padding={5}
       bg={"cyan"}
     >
-      <Image boxSize="250px" src={item.image} alt="Dan Abramov" mr={5} />
+      <Image boxSize="250px" src={item.image} alt="Dan Abramov" mr={5} 
+      maxW={{base:"200px",md:"400px"}} 
+      maxH={{base:"200px",md:"300px"}} 
+      minW={{base:"20px",md:"400px"}} 
+      minH={{base:"200px",md:"300px"}} 
+      />
       <Box
         display={"flex"}
         flexDir={"column"}
@@ -94,13 +99,15 @@ const AddCartBody = ({ item, setfetchagain, fetchAgain }) => {
             colorScheme={"blue"}
             mr={5}
             onClick={() => nav(`/bookingPage/${item._id}`)}
-          >
+            size={{base:"sm",md:"md"}}
+            >
             Book
           </Button>
           <Button
             variant={"solid"}
             colorScheme={"red"}
             onClick={() => removeFromCart(item)}
+            size={{base:"sm",md:"md"}}
           >
             Remove
           </Button>

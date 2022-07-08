@@ -1,4 +1,12 @@
-import { Box, Button, Image, Spinner, Text, toast, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Image,
+  Spinner,
+  Text,
+  toast,
+  useToast,
+} from "@chakra-ui/react";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../../context/context";
@@ -11,7 +19,7 @@ const MyOrdresPage = () => {
   const { tocken, varient, setvarient } = useContext(MainContext);
 
   const fetchAllOrdres = async () => {
-    const tocken = localStorage.getItem("tocken")
+    const tocken = localStorage.getItem("tocken");
     let options = {
       url: "https://pizza-ecommerce-website.herokuapp.com/user/fetchMyOrders",
       headers: {
@@ -46,11 +54,7 @@ const MyOrdresPage = () => {
       <UHeader>
         <Button>Home</Button>
       </UHeader>
-      <Box
-      display={"flex"}
-      flexDir={"column"}
-      rowGap={8}
-      >
+      <Box display={"flex"} flexDir={"column"} rowGap={8}>
         {/* {ordersList.length > 0 ? (
           ordersList[0].orders.map((item, index) => {
             return (
@@ -92,63 +96,68 @@ const MyOrdresPage = () => {
         {ordersList.length == 0 ? (
           // <Text fontSize={50} textAlign={"center"}>Nothing Has Been Ordered Yet</Text>
           <Box
-        // border={"12px solid red"}
-        textAlign="center"
-        >
-          <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.500"
-          size="xl"
-        alignSelf="center"
-        // size="xl"
-        />
-        <Skeletonjs />
-        </Box>
-        ) : <Box>
-                {
-                  ordersList[0].orders.length == 0 ? <Text fontSize={50} textAlign={"center"}>Nothing Has Been Ordered Yet</Text>
-                  : (
-                    ordersList[0].orders.map((item, index) => {
-                      return (
-                        <Box
-                        key={index}
-                        display={"flex"}
-                        justifyContent={"flex-start"}
-                        p={8}
-                        margin={"20px 30px 0px 30px"}
-                        boxShadow="dark-lg"
-                        >
-          
-                          <Image
-                            boxSize="300px"
-                            src={item.image}
-                            alt="Dan Abramov"
-                            mr={10}
-                          />
-                          <Box
-                          display={"flex"}
-                          flexDir={"column"}
-                          alignItems={"flex-start"}
-                          rowGap={5}
-                          fontSize={25}
-                          fontStyle={"italic"}
-                          >
-                            <Text>Name : {item.name}</Text>
-                            <Text>Category : {item.category}</Text>
-                            <Text>Varient : {item.varient}</Text>
-                            <Text>No_of_pizza : {item.No_of_pizza}</Text>
-                            <Text>Price : {item.price}</Text>
-                            <Text>Time : {item.time}</Text>
-                          </Box>
-                        </Box>
-                      );
-                    })
-                  )
-                }
+            // border={"12px solid red"}
+            textAlign="center"
+          >
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+              alignSelf="center"
+              // size="xl"
+            />
+            <Skeletonjs />
           </Box>
-        }
+        ) : (
+          <Box>
+            {ordersList[0].orders.length == 0 ? (
+              <Text fontSize={50} textAlign={"center"}>
+                Nothing Has Been Ordered Yet
+              </Text>
+            ) : (
+              ordersList[0].orders.map((item, index) => {
+                return (
+                  <Box
+                    key={index}
+                    display={"flex"}
+                    justifyContent={"flex-start"}
+                    p={8}
+                    margin={"20px 30px 0px 30px"}
+                    boxShadow="dark-lg"
+                  >
+                    <Image
+                      boxSize="300px"
+                      src={item.image}
+                      alt="Dan Abramov"
+                      mr={10}
+                      maxW={{ base: "200px", md: "400px" }}
+                      maxH={{ base: "200px", md: "300px" }}
+                      minW={{ base: "20px", md: "400px" }}
+                      minH={{ base: "200px", md: "300px" }}
+                    />
+                    <Box
+                      display={"flex"}
+                      flexDir={"column"}
+                      alignItems={"flex-start"}
+                      rowGap={5}
+                      fontSize={{base:15,md:25}}
+                      fontStyle={"italic"}
+                    >
+                      <Text>Name : {item.name}</Text>
+                      <Text>Category : {item.category}</Text>
+                      <Text>Varient : {item.varient}</Text>
+                      <Text>No_of_pizza : {item.No_of_pizza}</Text>
+                      <Text>Price : {item.price}</Text>
+                      <Text>Time : {item.time}</Text>
+                    </Box>
+                  </Box>
+                );
+              })
+            )}
+          </Box>
+        )}
       </Box>
     </Box>
   );
